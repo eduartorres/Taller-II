@@ -6,7 +6,7 @@ import plotly.graph_objs as go
 import numpy as np
 import pandas as pd
 import datetime as dt
-
+import os
 
 
 app = dash.Dash(
@@ -18,10 +18,20 @@ app.title = "Dashboard energia"
 server = app.server
 app.config.suppress_callback_exceptions = True
 
-
-# Load data from csv
+# Cargar datos desde un archivo CSV
 def load_data():
-    # To do: Completar la función 
+    # Obtener la ruta del script actual
+    base_path = os.path.dirname(os.path.abspath(__file__))
+
+    # Armar ruta completa al archivo CSV
+    csv_path = os.path.join(base_path, 'datos_energia.csv')
+
+    # Cargar datos
+    df = pd.read_csv(csv_path)
+    df['time'] = pd.to_datetime(df['time'])
+    df.set_index('time', inplace=True)
+
+    return df
     
 
 # Cargar datos
@@ -240,4 +250,4 @@ def update_output_div(date, hour, proy):
 
 # Run the server
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    app.run(debug=True)
