@@ -1,3 +1,4 @@
+# Importar librerías necesarias
 import dash
 from dash import dcc
 from dash import html
@@ -7,8 +8,9 @@ import numpy as np
 import pandas as pd
 import datetime as dt
 import os
+import plotly.express as px         
 
-
+# Configuración de la aplicación Dash
 app = dash.Dash(
     __name__,
     meta_tags=[{"name": "viewport", "content": "width=device-width, initial-scale=1"}],
