@@ -11,6 +11,8 @@ import os
 import plotly.express as px 
 # Comentario de prueba para ver Sync Changes en GitHub        
 
+# Un comentario bonito jaja 
+
 # Configuración de la aplicación Dash
 app = dash.Dash(
     __name__,
