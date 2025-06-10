@@ -8,7 +8,8 @@ import numpy as np
 import pandas as pd
 import datetime as dt
 import os
-import plotly.express as px         
+import plotly.express as px 
+# Comentario de prueba para ver Sync Changes en GitHub        
 
 # Configuración de la aplicación Dash
 app = dash.Dash(
